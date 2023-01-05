@@ -76,7 +76,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-//        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x3495eb, PURPLE_AMETHYST_BLOCK);
         AmethystAdditions.LOGGER.info("Registering ModBlocks for " + AmethystAdditions.MOD_ID);
     }
     

@@ -27,11 +27,6 @@ public class AmethystAdditions implements ModInitializer {
 	public static final String MOD_ID = "amethystadds";
 	public static final Logger LOGGER = LoggerFactory.getLogger("MOD_ID");
 
-	@Environment(EnvType.CLIENT)
-	public static void rebuildBlock(BlockPos pos) {
-		MinecraftClient.getInstance().worldRenderer.scheduleBlockRenders(pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ());
-	}
-
 	@Override
 	public void onInitialize() {
 
