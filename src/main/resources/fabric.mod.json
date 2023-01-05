@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "amethystadds",
+  "version": "${version}",
+
+  "name": "Amethyst Additions",
+  "description": "",
+  "authors": [
+    "Eps"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/amethystadds/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.eps.amethystadds.AmethystAddsClient"
+    ],
+    "main": [
+      "net.eps.amethystadds.AmethystAdditions"
+    ]
+  },
+  "mixins": [
+    "amethystadds.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.10",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

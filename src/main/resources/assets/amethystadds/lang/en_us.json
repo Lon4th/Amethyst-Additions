@@ -1,0 +1,36 @@
+{
+    "item.amethystadds.green_amethyst": "Green Amethyst Shard",
+    "item.amethystadds.lime_amethyst": "Lime Amethyst Shard",
+    "item.amethystadds.black_amethyst": "Black Amethyst Shard",
+    "item.amethystadds.blue_amethyst": "Blue Amethyst Shard",
+    "item.amethystadds.brown_amethyst": "Brown Amethyst Shard",
+    "item.amethystadds.cyan_amethyst": "Cyan Amethyst Shard",
+    "item.amethystadds.gray_amethyst": "Gray Amethyst Shard",
+    "item.amethystadds.light_blue_amethyst": "Light Blue Amethyst Shard",
+    "item.amethystadds.light_gray_amethyst": "Light Gray Amethyst Shard",
+    "item.amethystadds.magenta_amethyst": "Magenta Amethyst Shard",
+    "item.amethystadds.orange_amethyst": "Orange Amethyst Shard",
+    "item.amethystadds.pink_amethyst": "Pink Amethyst Shard",
+    "item.amethystadds.red_amethyst": "Red Amethyst Shard",
+    "item.amethystadds.white_amethyst": "White Amethyst Shard",
+    "item.amethystadds.yellow_amethyst": "Yellow Amethyst Shard",
+
+
+
+    "block.amethystadds.purple_amethyst_block": "Purple Amethyst Block",
+    "block.amethystadds.green_amethyst_block": "Green Amethyst Block",
+    "block.amethystadds.black_amethyst_block": "Black Amethyst Block",
+    "block.amethystadds.blue_amethyst_block": "Blue Amethyst Block",
+    "block.amethystadds.brown_amethyst_block": "Brown Amethyst Block",
+    "block.amethystadds.cyan_amethyst_block": "Cyan Amethyst Block",
+    "block.amethystadds.gray_amethyst_block": "Gray Amethyst Block",
+    "block.amethystadds.light_blue_amethyst_block": "Light Blue Amethyst Block",
+    "block.amethystadds.light_gray_amethyst_block": "Light Gray Amethyst Block",
+    "block.amethystadds.magenta_amethyst_block": "Magenta Amethyst Block",
+    "block.amethystadds.lime_amethyst_block": "Lime Amethyst Block",
+    "block.amethystadds.orange_amethyst_block": "Orange Amethyst Block",
+    "block.amethystadds.pink_amethyst_block": "Pink Amethyst Block",
+    "block.amethystadds.red_amethyst_block": "Red Amethyst Block",
+    "block.amethystadds.white_amethyst_block": "White Amethyst Block",
+    "block.amethystadds.yellow_amethyst_block": "Yellow Amethyst Block"
+}
