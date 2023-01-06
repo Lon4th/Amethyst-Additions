@@ -19,6 +19,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.Map;
+
 import static net.minecraft.block.Blocks.CAULDRON;
 
 public class ModBlocks {
@@ -59,7 +61,7 @@ public class ModBlocks {
     public static final Block RED_WATER_FLUID_BLOCK = registerBlock("red_water_fluid_block", new ModFluidBlock(ModFluids.RED_WATER_STILL, FabricBlockSettings.of(Material.WATER)
                     .noCollision().nonOpaque().dropsNothing()));
 
-    public static final Block RED_WATER_CAULDRON = registerBlock( "red_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), LeveledCauldronBlock.RAIN_PREDICATE, CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block RED_WATER_CAULDRON = registerBlock( "red_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), LeveledCauldronBlock.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
 
 
 
