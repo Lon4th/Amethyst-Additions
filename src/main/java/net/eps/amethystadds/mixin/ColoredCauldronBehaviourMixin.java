@@ -6,6 +6,7 @@ import net.eps.amethystadds.AmethystAdditions;
 import net.eps.amethystadds.block.ModBlocks;
 import net.eps.amethystadds.block.custom.ColoredCauldronBehavior;
 //import net.eps.amethystadds.block.custom.entity.WaterCauldronBlockEntity;
+import net.eps.amethystadds.block.custom.ColoredWaterCauldron;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.block.cauldron.CauldronBehavior;
@@ -42,15 +43,7 @@ public interface ColoredCauldronBehaviourMixin {
             player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
             player.incrementStat(Stats.USE_CAULDRON);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
-            if (state.get(LeveledCauldronBlock.LEVEL) == 3) {
-                CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
-            }
-            if (state.get(LeveledCauldronBlock.LEVEL) == 2) {
-                CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, 2), SoundEvents.ITEM_BUCKET_EMPTY);
-            }
-            if (state.get(LeveledCauldronBlock.LEVEL) == 1) {
-                CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, 1), SoundEvents.ITEM_BUCKET_EMPTY);
-            }
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
             return ActionResult.success(world.isClient);
 
     });
