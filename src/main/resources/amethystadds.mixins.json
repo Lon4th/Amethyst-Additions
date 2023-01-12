@@ -7,10 +7,10 @@
     "ModEntityDataSaver"
   ],
   "client": [
-    "ExampleMixin",
-    "PlayerTest",
+    "BoostrapMixin",
     "ColoredCauldronBehaviourMixin",
-    "BoostrapMixin"
+    "ExampleMixin",
+    "PlayerTest"
   ],
   "injectors": {
     "defaultRequire": 1

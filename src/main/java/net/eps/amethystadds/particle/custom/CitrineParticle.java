@@ -41,7 +41,11 @@ public class CitrineParticle extends SpriteBillboardParticle {
    }
 
     private void fadeOut() {
-        this.alpha = (-(1/(float)20) * age + 1);
+        if (age <= 20){
+            this.alpha = (-(1 / (float) 20) * age + 1);
+        } else {
+            this.alpha = 0;
+        }
     }
 
     @Override

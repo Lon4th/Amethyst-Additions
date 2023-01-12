@@ -26,8 +26,6 @@ import java.util.Map;
 public interface ColoredCauldronBehavior extends CauldronBehavior {
     public static final Map<Item, ColoredCauldronBehavior> COLORED_CAULDRON_BEHAVIOR = ColoredCauldronBehavior.createMap();
 
-    public static final ColoredCauldronBehavior PRECIPITATION_FILL_RED_WATER = (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState) Blocks.WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(ColoredWaterCauldron.LEVEL)).cycle(ColoredWaterCauldron.LEVEL), SoundEvents.ITEM_BUCKET_EMPTY);
-
     public static final ColoredCauldronBehavior DYE_DYEABLE_ITEM = (state, world, pos, player, hand, stack) -> {
         Item item = stack.getItem();
         if (!(item instanceof DyeableItem)) {

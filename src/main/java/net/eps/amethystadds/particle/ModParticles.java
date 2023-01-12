@@ -24,6 +24,8 @@ public class ModParticles {
     public static final DefaultParticleType WHITE_AMETHYST_BLOOM = FabricParticleTypes.simple();
     public static final DefaultParticleType YELLOW_AMETHYST_BLOOM = FabricParticleTypes.simple();
 
+    public static final DefaultParticleType RED_BUBBLE = FabricParticleTypes.simple();
+
     public static void registerParticles() {
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "citrine_particle"), AMETHYST_BLOOM);
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "green_citrine_particle"), GREEN_AMETHYST_BLOOM);
@@ -41,5 +43,7 @@ public class ModParticles {
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "red_citrine_particle"), RED_AMETHYST_BLOOM);
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "white_citrine_particle"), WHITE_AMETHYST_BLOOM);
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "yellow_citrine_particle"), YELLOW_AMETHYST_BLOOM);
+
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "red_bubble_particle"), RED_BUBBLE);
     }
 }
