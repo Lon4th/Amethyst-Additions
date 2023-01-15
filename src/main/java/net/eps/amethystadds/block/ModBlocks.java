@@ -62,6 +62,21 @@ public class ModBlocks {
                     .noCollision().nonOpaque().dropsNothing()));
 
     public static final Block RED_WATER_CAULDRON = registerBlock( "red_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block YELLOW_WATER_CAULDRON = registerBlock( "yellow_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block GREEN_WATER_CAULDRON = registerBlock( "green_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block LIME_WATER_CAULDRON = registerBlock( "lime_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block ORANGE_WATER_CAULDRON = registerBlock( "orange_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block WHITE_WATER_CAULDRON = registerBlock( "white_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block BROWN_WATER_CAULDRON = registerBlock( "brown_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block LIGHT_BLUE_WATER_CAULDRON = registerBlock( "light_blue_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block BLUE_WATER_CAULDRON = registerBlock( "blue_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block CYAN_WATER_CAULDRON = registerBlock( "cyan_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block PINK_WATER_CAULDRON = registerBlock( "pink_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block MAGENTA_WATER_CAULDRON = registerBlock( "magenta_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block PURPLE_WATER_CAULDRON = registerBlock( "purple_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block LIGHT_GRAY_WATER_CAULDRON = registerBlock( "light_gray_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block GRAY_WATER_CAULDRON = registerBlock( "gray_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
+    public static final Block BLACK_WATER_CAULDRON = registerBlock( "black_water_cauldron", new ColoredWaterCauldron(AbstractBlock.Settings.copy(CAULDRON), ColoredWaterCauldron.RAIN_PREDICATE, null, ColoredCauldronBehavior.COLORED_CAULDRON_BEHAVIOR));
 
 
 

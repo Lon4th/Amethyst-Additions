@@ -36,7 +36,7 @@ import static net.eps.amethystadds.block.ModBlocks.RED_WATER_CAULDRON;
 import static net.eps.amethystadds.block.custom.CauldronBlockWithEntity.checkType;
 
 
-public class ColoredWaterCauldron extends LeveledCauldronBlock implements BlockEntityProvider {
+public class ColoredWaterCauldron extends LeveledCauldronBlock implements BlockEntityProvider, ColorBehavior {
     public static final BooleanProperty POWERED = BooleanProperty.of("powered");
     public static final BooleanProperty BOILED = BooleanProperty.of("boiled");
     private final Map<Item, ColoredCauldronBehavior> behaviorMapExtended;
@@ -103,12 +103,11 @@ public class ColoredWaterCauldron extends LeveledCauldronBlock implements BlockE
     }
 
     public static void spawnBoilParticles(BlockState state, World world, BlockPos pos) {
-        Block block = state.getBlock();
         Random random = world.getRandom();
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         mutable.set(pos.getX() + MathHelper.nextInt(random, 2/16, 14/16), pos.getY() + MathHelper.nextInt(random, 0, 10), pos.getZ() + MathHelper.nextInt(random, 2/16, 14/16));
-        if (block.equals(RED_WATER_CAULDRON) && state.get(BOILED)) {
-                world.addImportantParticle(ModParticles.RED_BUBBLE, true, (double) pos.getX() + MathHelper.nextDouble(random, 2.0/16.0, 14.0/16.0), (double)pos.getY() + (6.0 + (double)state.get(LEVEL).intValue() * 3.0) / 16.0, (double) pos.getZ() + MathHelper.nextDouble(random, 2.0/16.0, 14.0/16.0), 0.0, 0.1, 0.0);
+        if (state.get(BOILED)) {
+                world.addImportantParticle(ColorBehavior.GetBubbleColor(state), true, (double) pos.getX() + MathHelper.nextDouble(random, 2.0/16.0, 14.0/16.0), (double)pos.getY() + (6.0 + (double)state.get(LEVEL).intValue() * 3.0) / 16.0, (double) pos.getZ() + MathHelper.nextDouble(random, 2.0/16.0, 14.0/16.0), 0.0, 0.1, 0.0);
         }
     }
 

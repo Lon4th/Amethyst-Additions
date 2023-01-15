@@ -23,7 +23,7 @@ import net.minecraft.world.event.GameEvent;
 
 import java.util.Map;
 
-public interface ColoredCauldronBehavior extends CauldronBehavior {
+public interface ColoredCauldronBehavior extends CauldronBehavior, ColorBehavior {
     public static final Map<Item, ColoredCauldronBehavior> COLORED_CAULDRON_BEHAVIOR = ColoredCauldronBehavior.createMap();
 
     public static final ColoredCauldronBehavior DYE_DYEABLE_ITEM = (state, world, pos, player, hand, stack) -> {
@@ -32,11 +32,11 @@ public interface ColoredCauldronBehavior extends CauldronBehavior {
             return ActionResult.PASS;
         }
         DyeableItem dyeableItem = (DyeableItem)((Object)item);
-        if (dyeableItem.getColor(stack) == 11546150) {
+        if (dyeableItem.getColor(stack) == ColorBehavior.GetIntColor(state)) {
             return ActionResult.PASS;
         }
         if (!world.isClient) {
-            dyeableItem.setColor(stack, 11546150);
+            dyeableItem.setColor(stack, ColorBehavior.GetIntColor(state));
             ColoredWaterCauldron.decrementFluidLevel(state, world, pos);
         }
         return ActionResult.success(world.isClient);
@@ -48,11 +48,11 @@ public interface ColoredCauldronBehavior extends CauldronBehavior {
             return ActionResult.PASS;
         }
         DyeColor color = ShulkerBoxBlock.getColor(block);
-        if (color == DyeColor.RED) {
+        if (color == ColorBehavior.GetDyeColor(state)) {
             return ActionResult.PASS;
         }
         if (!world.isClient) {
-            ItemStack itemStack = new ItemStack(Blocks.RED_SHULKER_BOX);
+            ItemStack itemStack = new ItemStack(ColorBehavior.GetShulkerColor(state));
             if (stack.hasNbt()) {
                 itemStack.setNbt(stack.getNbt().copy());
             }

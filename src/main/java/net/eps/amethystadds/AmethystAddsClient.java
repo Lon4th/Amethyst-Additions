@@ -31,6 +31,21 @@ public class AmethystAddsClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(ModParticles.YELLOW_AMETHYST_BLOOM, CitrineParticle.Factory::new);
 
         ParticleFactoryRegistry.getInstance().register(ModParticles.RED_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.YELLOW_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.GREEN_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.LIME_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.ORANGE_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.WHITE_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BROWN_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHT_BLUE_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BLUE_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.CYAN_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.PINK_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.MAGENTA_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.PURPLE_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.LIGHT_GRAY_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.GRAY_BUBBLE, ColoredBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BLACK_BUBBLE, ColoredBubbleParticle.Factory::new);
 
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.RED_WATER_STILL,
                 new SimpleFluidRenderHandler(SimpleFluidRenderHandler.WATER_STILL,

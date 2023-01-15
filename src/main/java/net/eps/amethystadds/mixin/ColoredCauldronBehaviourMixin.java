@@ -38,14 +38,132 @@ public interface ColoredCauldronBehaviourMixin {
     @Inject(method = "registerBehavior", at = @At("TAIL"))
     private static void registerBehavior0(CallbackInfo ci) {
     CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.RED_DYE, (state, world, pos, player, hand, stack) -> {
-
             Item item = stack.getItem();
             player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
             player.incrementStat(Stats.USE_CAULDRON);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
             CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
             return ActionResult.success(world.isClient);
-
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.YELLOW_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.YELLOW_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.GREEN_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.GREEN_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.LIME_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.LIME_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.ORANGE_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.ORANGE_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.WHITE_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.WHITE_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.BROWN_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.BROWN_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.LIGHT_BLUE_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.LIGHT_BLUE_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.BLUE_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.BLUE_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.CYAN_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.CYAN_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.PINK_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.PINK_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.MAGENTA_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.MAGENTA_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.PURPLE_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.PURPLE_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.LIGHT_GRAY_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.LIGHT_GRAY_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.GRAY_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.GRAY_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
+    });
+    CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(Items.BLACK_DYE, (state, world, pos, player, hand, stack) -> {
+            Item item = stack.getItem();
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.BLACK_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL, state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+            return ActionResult.success(world.isClient);
     });
     }
 }

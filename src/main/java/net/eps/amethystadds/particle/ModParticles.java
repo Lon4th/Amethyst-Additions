@@ -25,6 +25,21 @@ public class ModParticles {
     public static final DefaultParticleType YELLOW_AMETHYST_BLOOM = FabricParticleTypes.simple();
 
     public static final DefaultParticleType RED_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType YELLOW_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType GREEN_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType LIME_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType ORANGE_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType WHITE_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType BROWN_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType LIGHT_BLUE_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType BLUE_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType CYAN_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType PINK_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType MAGENTA_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType PURPLE_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType LIGHT_GRAY_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType GRAY_BUBBLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType BLACK_BUBBLE = FabricParticleTypes.simple();
 
     public static void registerParticles() {
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "citrine_particle"), AMETHYST_BLOOM);
@@ -45,5 +60,20 @@ public class ModParticles {
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "yellow_citrine_particle"), YELLOW_AMETHYST_BLOOM);
 
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "red_bubble_particle"), RED_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "yellow_bubble_particle"), YELLOW_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "green_bubble_particle"), GREEN_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "lime_bubble_particle"), LIME_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "orange_bubble_particle"), ORANGE_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "white_bubble_particle"), WHITE_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "brown_bubble_particle"), BROWN_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "light_blue_bubble_particle"), LIGHT_BLUE_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "blue_bubble_particle"), BLUE_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "cyan_bubble_particle"), CYAN_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "pink_bubble_particle"), PINK_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "magenta_bubble_particle"), MAGENTA_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "purple_bubble_particle"), PURPLE_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "light_gray_bubble_particle"), LIGHT_GRAY_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "gray_bubble_particle"), GRAY_BUBBLE);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(AmethystAdditions.MOD_ID, "black_bubble_particle"), BLACK_BUBBLE);
     }
 }

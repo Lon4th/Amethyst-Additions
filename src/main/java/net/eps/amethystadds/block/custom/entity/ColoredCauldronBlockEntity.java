@@ -3,6 +3,7 @@ package net.eps.amethystadds.block.custom.entity;
 import net.eps.amethystadds.block.ModBlocks;
 import net.eps.amethystadds.block.custom.AmethystBlock;
 import net.eps.amethystadds.block.custom.CauldronBlockWithEntity;
+import net.eps.amethystadds.block.custom.ColorBehavior;
 import net.eps.amethystadds.block.custom.ColoredWaterCauldron;
 import net.eps.amethystadds.particle.ModParticles;
 import net.minecraft.block.BlockState;
@@ -16,7 +17,7 @@ import net.minecraft.world.World;
 import static net.eps.amethystadds.block.custom.ColoredWaterCauldron.BOILED;
 import static net.eps.amethystadds.block.custom.ColoredWaterCauldron.POWERED;
 
-public class ColoredCauldronBlockEntity extends BlockEntity {
+public class ColoredCauldronBlockEntity extends BlockEntity implements ColorBehavior {
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -104,13 +105,13 @@ public class ColoredCauldronBlockEntity extends BlockEntity {
 
         boolean amethystblock = world.getBlockState(pos.up()).getBlock() instanceof AmethystBlock;
 
-        if (amethystblock && !(world.getBlockState(pos.up()).getBlock() == ModBlocks.RED_AMETHYST_BLOCK)) {
+        if (amethystblock && !(world.getBlockState(pos.up()).getBlock() == ColorBehavior.GetAmethystColor(state))) {
             entity.transformProgress++;
-            ColoredWaterCauldron.spawnParticlesWhileTransforming(world, pos.up(), ModParticles.RED_BUBBLE);
+            ColoredWaterCauldron.spawnParticlesWhileTransforming(world, pos.up(), ColorBehavior.GetBubbleColor(state));
             if (entity.transformProgress >= entity.maxTransformProgress) {
-                world.setBlockState(pos.up(), ModBlocks.RED_AMETHYST_BLOCK.getDefaultState());
+                world.setBlockState(pos.up(), ColorBehavior.GetAmethystColor(state).getDefaultState());
                 ColoredWaterCauldron.decrementFluidLevel(state, world, pos);
-                ColoredWaterCauldron.spawnTransformParticles(world, pos.up(), ModParticles.RED_AMETHYST_BLOOM);
+                ColoredWaterCauldron.spawnTransformParticles(world, pos.up(), ColorBehavior.GetBloomColor(state));
             }
         } else {
             entity.resetTransformProgress();
