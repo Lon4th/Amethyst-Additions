@@ -114,29 +114,29 @@ public class ColoredWaterCauldron extends LeveledCauldronBlock implements BlockE
     public static void spawnParticlesWhileTransforming(World world, BlockPos pos, DefaultParticleType particle) {
         Random random = world.getRandom();
         world.addImportantParticle(particle, false,
-                (double) pos.getX() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
+                (double) pos.getX() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
                 (double) pos.getY() + 1.0 + 0.1/16.0,
-                (double) pos.getZ() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0), 0.0, 0.1, 0.0);
+                (double) pos.getZ() + MathHelper.nextDouble(random, 1.0/16.0, 1.0), 0.0, 0.1, 0.0);
 
         world.addImportantParticle(particle, false,
-                (double) pos.getX() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
-                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
+                (double) pos.getX() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
+                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
                 (double) pos.getZ() - 0.1/16.0, 0.0, 0.1, 0.0);
 
         world.addImportantParticle(particle, false,
                 (double) pos.getX() - 0.1/16.0,
-                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
-                (double) pos.getZ() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0), 0.0, 0.1, 0.0);
+                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
+                (double) pos.getZ() + MathHelper.nextDouble(random, 1.0/16.0, 1.0), 0.0, 0.1, 0.0);
 
         world.addImportantParticle(particle, false,
-                (double) pos.getX() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
-                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
+                (double) pos.getX() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
+                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
                 (double) pos.getZ() + 1 + 0.1/16.0, 0.0, 0.1, 0.0);
 
         world.addImportantParticle(particle, false,
                 (double) pos.getX() + 1 + 0.1/16.0,
-                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0),
-                (double) pos.getZ() + MathHelper.nextDouble(random, 1.0/16.0, 16.0/16.0), 0.0, 0.1, 0.0);
+                (double) pos.getY() + MathHelper.nextDouble(random, 1.0/16.0, 1.0),
+                (double) pos.getZ() + MathHelper.nextDouble(random, 1.0/16.0, 1.0), 0.0, 0.1, 0.0);
     }
 
     public static void spawnTransformParticles(World world, BlockPos pos, DefaultParticleType particle) {

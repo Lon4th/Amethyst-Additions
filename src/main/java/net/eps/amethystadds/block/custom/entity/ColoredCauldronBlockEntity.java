@@ -21,9 +21,9 @@ public class ColoredCauldronBlockEntity extends BlockEntity implements ColorBeha
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 200;
+    private int maxProgress = 2000;
     private int transformProgress = 0;
-    private int maxTransformProgress = 200;
+    private int maxTransformProgress = 2000;
 
     public ColoredCauldronBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COLORED_CAULDRON_BLOCK, pos, state);

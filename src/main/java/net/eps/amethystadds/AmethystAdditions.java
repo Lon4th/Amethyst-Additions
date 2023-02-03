@@ -1,24 +1,12 @@
 package net.eps.amethystadds;
 
 import net.eps.amethystadds.block.ModBlocks;
-import net.eps.amethystadds.block.custom.entity.AmethystBlockEntity;
 import net.eps.amethystadds.block.custom.entity.ModBlockEntities;
-//import net.eps.amethystadds.block.custom.entity.WaterCauldronBlockEntity;
 import net.eps.amethystadds.item.ModItems;
 import net.eps.amethystadds.particle.ModParticles;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.fabricmc.fabric.api.event.Event;
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

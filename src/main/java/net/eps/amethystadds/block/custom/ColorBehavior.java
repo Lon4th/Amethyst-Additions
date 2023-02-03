@@ -5,6 +5,9 @@ import net.eps.amethystadds.particle.ModParticles;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.DyeColor;
@@ -53,7 +56,7 @@ public interface ColorBehavior {
         if (state.getBlock() == ModBlocks.RED_WATER_CAULDRON) {
             return Blocks.RED_SHULKER_BOX;
         } else if (state.getBlock() == ModBlocks.YELLOW_WATER_CAULDRON) {
-            return Blocks.RED_SHULKER_BOX;
+            return Blocks.YELLOW_SHULKER_BOX;
         } else if (state.getBlock() == ModBlocks.GREEN_WATER_CAULDRON) {
             return Blocks.GREEN_SHULKER_BOX;
         } else if (state.getBlock() == ModBlocks.LIME_WATER_CAULDRON) {
@@ -228,9 +231,141 @@ public interface ColorBehavior {
             return ModParticles.MAGENTA_AMETHYST_BLOOM;
         } else if (state.getBlock() == ModBlocks.PURPLE_WATER_CAULDRON) {
             return ModParticles.AMETHYST_BLOOM;
+        } else if (state.getBlock() == ModBlocks.BLACK_WATER_CAULDRON) {
+            return ModParticles.BLACK_AMETHYST_BLOOM;
+        } else if (state.getBlock() == ModBlocks.LIGHT_GRAY_WATER_CAULDRON) {
+            return ModParticles.LIGHT_GRAY_AMETHYST_BLOOM;
+        } else if (state.getBlock() == ModBlocks.GRAY_WATER_CAULDRON) {
+            return ModParticles.GRAY_AMETHYST_BLOOM;
         } else {
             return null;
         }
+    }
+
+    public static DefaultParticleType getDustColor(ItemStack stack) {
+        if (stack.getItem() == Items.RED_DYE) {
+            return ModParticles.RED_DUST;
+        } else if (stack.getItem() == Items.YELLOW_DYE) {
+            return ModParticles.YELLOW_DUST;
+        } else if (stack.getItem() == Items.GREEN_DYE) {
+            return ModParticles.GREEN_DUST;
+        } else if (stack.getItem() == Items.LIME_DYE) {
+            return ModParticles.LIME_DUST;
+        } else if (stack.getItem() == Items.ORANGE_DYE) {
+            return ModParticles.ORANGE_DUST;
+        } else if (stack.getItem() == Items.WHITE_DYE) {
+            return ModParticles.WHITE_DUST;
+        } else if (stack.getItem() == Items.BROWN_DYE) {
+            return ModParticles.BROWN_DUST;
+        } else if (stack.getItem() == Items.LIGHT_BLUE_DYE) {
+            return ModParticles.LIGHT_BLUE_DUST;
+        } else if (stack.getItem() == Items.BLUE_DYE) {
+            return ModParticles.BLUE_DUST;
+        } else if (stack.getItem() == Items.CYAN_DYE) {
+            return ModParticles.CYAN_DUST;
+        } else if (stack.getItem() == Items.PINK_DYE) {
+            return ModParticles.PINK_DUST;
+        } else if (stack.getItem() == Items.MAGENTA_DYE) {
+            return ModParticles.MAGENTA_DUST;
+        } else if (stack.getItem() == Items.PURPLE_DYE) {
+            return ModParticles.PURPLE_DUST;
+        } else if (stack.getItem() == Items.BLACK_DYE) {
+            return ModParticles.BLACK_DUST;
+        } else if (stack.getItem() == Items.LIGHT_GRAY_DYE) {
+            return ModParticles.LIGHT_GRAY_DUST;
+        } else if (stack.getItem() == Items.GRAY_DYE) {
+            return ModParticles.GRAY_DUST;
+        } else {
+            return null;
+        }
+    }
+
+    public static Block getCauldronFromDye(ItemStack stack) {
+        if (stack.getItem() == Items.RED_DYE) {
+            return ModBlocks.RED_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.YELLOW_DYE) {
+            return ModBlocks.YELLOW_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.GREEN_DYE) {
+            return ModBlocks.GREEN_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.LIME_DYE) {
+            return ModBlocks.LIME_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.ORANGE_DYE) {
+            return ModBlocks.ORANGE_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.WHITE_DYE) {
+            return ModBlocks.WHITE_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.BROWN_DYE) {
+            return ModBlocks.BROWN_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.LIGHT_BLUE_DYE) {
+            return ModBlocks.LIGHT_BLUE_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.BLUE_DYE) {
+            return ModBlocks.BLUE_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.CYAN_DYE) {
+            return ModBlocks.CYAN_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.PINK_DYE) {
+            return ModBlocks.PINK_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.MAGENTA_DYE) {
+            return ModBlocks.MAGENTA_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.PURPLE_DYE) {
+            return ModBlocks.PURPLE_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.BLACK_DYE) {
+            return ModBlocks.BLACK_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.LIGHT_GRAY_DYE) {
+            return ModBlocks.LIGHT_GRAY_WATER_CAULDRON;
+        } else if (stack.getItem() == Items.GRAY_DYE) {
+            return ModBlocks.GRAY_WATER_CAULDRON;
+        } else {
+            return null;
+        }
+    }
+
+    public static boolean compareColors(ItemStack stack, BlockState state) {
+        if (state.getBlock() == ModBlocks.RED_WATER_CAULDRON &&
+                stack.getItem() == Items.RED_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.YELLOW_WATER_CAULDRON &&
+                stack.getItem() == Items.YELLOW_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.ORANGE_WATER_CAULDRON &&
+                stack.getItem() == Items.ORANGE_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.BROWN_WATER_CAULDRON &&
+                stack.getItem() == Items.BROWN_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.GREEN_WATER_CAULDRON &&
+                stack.getItem() == Items.GREEN_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.LIME_WATER_CAULDRON &&
+                stack.getItem() == Items.LIME_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.PURPLE_WATER_CAULDRON &&
+                stack.getItem() == Items.PURPLE_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.PINK_WATER_CAULDRON &&
+                stack.getItem() == Items.PINK_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.MAGENTA_WATER_CAULDRON &&
+                stack.getItem() == Items.MAGENTA_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.BLUE_WATER_CAULDRON &&
+                stack.getItem() == Items.BLUE_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.LIGHT_BLUE_WATER_CAULDRON &&
+                stack.getItem() == Items.LIGHT_BLUE_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.CYAN_WATER_CAULDRON &&
+                stack.getItem() == Items.CYAN_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.WHITE_WATER_CAULDRON &&
+                stack.getItem() == Items.WHITE_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.LIGHT_GRAY_WATER_CAULDRON &&
+                stack.getItem() == Items.LIGHT_GRAY_DYE) {
+            return true;
+        } else if (state.getBlock() == ModBlocks.GRAY_WATER_CAULDRON &&
+                stack.getItem() == Items.GRAY_DYE) {
+            return true;
+        } else return state.getBlock() == ModBlocks.BLACK_WATER_CAULDRON &&
+                stack.getItem() == Items.BLACK_DYE;
     }
 
 }

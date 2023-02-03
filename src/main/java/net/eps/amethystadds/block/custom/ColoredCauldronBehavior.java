@@ -2,6 +2,7 @@ package net.eps.amethystadds.block.custom;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.eps.amethystadds.block.ModBlocks;
+import net.eps.amethystadds.particle.ModParticles;
 import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.entity.BannerBlockEntity;
@@ -18,6 +19,7 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
@@ -62,6 +64,34 @@ public interface ColoredCauldronBehavior extends CauldronBehavior, ColorBehavior
         return ActionResult.success(world.isClient);
     };
 
+    public static final ColoredCauldronBehavior DYE_CAULDRON = (state, world, pos, player, hand, stack) -> {
+        if (ColorBehavior.compareColors(stack, state)) {
+            return ActionResult.PASS;
+        }
+            float pitch = player.getPitch();
+            float yaw = player.getYaw();
+            float roll = 0.0F;
+            float f = (float) (-Math.sin(yaw * 0.017453292F) * Math.cos(pitch * 0.017453292F));
+            float g = (float) -Math.sin((pitch + roll) * 0.017453292F);
+            float h = (float) (Math.cos(yaw * 0.017453292F) * Math.cos(pitch * 0.017453292F));
+            Vec3d position = player.getEyePos();
+            Item item = stack.getItem();
+
+            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.AIR)));
+            player.incrementStat(Stats.USE_CAULDRON);
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
+            ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, ColorBehavior.getCauldronFromDye(stack).getDefaultState().with(ColoredWaterCauldron.LEVEL,
+                    state.get(ColoredWaterCauldron.LEVEL)), SoundEvents.ITEM_BONE_MEAL_USE, true);
+            for (int i = 0; i <= world.getRandom().nextBetween(3, 12); i++) {
+                world.addImportantParticle(ColorBehavior.getDustColor(stack), position.x, position.y + 0.1, position.z,
+                        f + world.getRandom().nextBetween(-1, 1) / 7.0,
+                        g + world.getRandom().nextBetween(-1, 1) / 16.0,
+                        h + world.getRandom().nextBetween(-1, 1) / 7.0);
+        }
+
+        return ActionResult.success(world.isClient);
+    };
+
     public static Object2ObjectOpenHashMap<Item, ColoredCauldronBehavior> createMap() {
         return Util.make(new Object2ObjectOpenHashMap<>(), map -> map.defaultReturnValue((state, world, pos, player, hand, stack) -> ActionResult.PASS));
     }
@@ -93,6 +123,23 @@ public interface ColoredCauldronBehavior extends CauldronBehavior, ColorBehavior
         COLORED_CAULDRON_BEHAVIOR.put(Items.WHITE_SHULKER_BOX, DYE_SHULKER_BOX);
         COLORED_CAULDRON_BEHAVIOR.put(Items.YELLOW_SHULKER_BOX, DYE_SHULKER_BOX);
 
+        COLORED_CAULDRON_BEHAVIOR.put(Items.RED_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.ORANGE_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.BROWN_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.YELLOW_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.GREEN_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.LIME_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.LIGHT_BLUE_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.LIGHT_GRAY_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.CYAN_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.BLUE_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.PURPLE_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.PINK_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.MAGENTA_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.WHITE_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.GRAY_DYE, DYE_CAULDRON);
+        COLORED_CAULDRON_BEHAVIOR.put(Items.BLACK_DYE, DYE_CAULDRON);
+
         COLORED_CAULDRON_BEHAVIOR.put(Items.WATER_BUCKET, (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)Blocks.WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY));
         COLORED_CAULDRON_BEHAVIOR.put(Items.LAVA_BUCKET, (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, Blocks.LAVA_CAULDRON.getDefaultState(), SoundEvents.ITEM_BUCKET_EMPTY_LAVA));
         COLORED_CAULDRON_BEHAVIOR.put(Items.POWDER_SNOW_BUCKET, (state, world, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(world, pos, player, hand, stack, (BlockState)Blocks.POWDER_SNOW_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY_POWDER_SNOW));
@@ -118,9 +165,9 @@ public interface ColoredCauldronBehavior extends CauldronBehavior, ColorBehavior
                 player.incrementStat(Stats.USE_CAULDRON);
                 player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
                 if (state.get(LeveledCauldronBlock.LEVEL) != 3) {
-                    ColoredCauldronBehavior.ClearCauldron(world, pos, player, hand, stack, Blocks.WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, state.get(ColoredWaterCauldron.LEVEL)).cycle(LeveledCauldronBlock.LEVEL), SoundEvents.ITEM_BUCKET_EMPTY);
+                    ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, Blocks.WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, state.get(ColoredWaterCauldron.LEVEL)).cycle(LeveledCauldronBlock.LEVEL), SoundEvents.ITEM_BUCKET_EMPTY, false);
                 } else {
-                    ColoredCauldronBehavior.ClearCauldron(world, pos, player, hand, stack, Blocks.WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, state.get(ColoredWaterCauldron.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY);
+                    ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, Blocks.WATER_CAULDRON.getDefaultState().with(LeveledCauldronBlock.LEVEL, state.get(ColoredWaterCauldron.LEVEL)), SoundEvents.ITEM_BUCKET_EMPTY, false);
                 }
                 world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
@@ -129,11 +176,16 @@ public interface ColoredCauldronBehavior extends CauldronBehavior, ColorBehavior
         });
     }
 
-    public static ActionResult ClearCauldron(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent
-            soundEvent) {
+    public static ActionResult ChangeCauldron(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack, BlockState state, SoundEvent soundEvent, boolean colorChange) {
         if (!world.isClient) {
             Item item = stack.getItem();
-            player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
+            if (!player.isCreative()){
+                if (colorChange) {
+                    stack.decrement(1);
+                } else {
+                    player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
+                }
+            }
             player.incrementStat(Stats.FILL_CAULDRON);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
             world.setBlockState(pos, state);
