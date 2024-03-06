@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "a": {
+      "item": "amethystadds:light_blue_amethyst"
+    },
+    "A": {
+      "tag": "amethystadds:amethyst_clusters"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "ada",
+    "aAa",
+    "aaa"
+  ],
+  "result": {
+    "item": "amethystadds:black_amethyst_block",
+    "count": 1
+  }
+}

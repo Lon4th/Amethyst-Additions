@@ -1,0 +1,8 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "amethystadds:block/amethyst_lamp_gray",
+        "particle": "block/amethyst_block"
+
+    }
+}

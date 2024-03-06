@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "ada",
+    "aAa",
+    "aaa"
+  ],
+  "result": {
+    "item": "amethystadds:black_amethyst_block",
+    "count": 1
+  }
+}
