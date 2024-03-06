@@ -1,28 +1,28 @@
 {
   "variants": {
     "facing=down": {
-      "model": "amethystadds:block/amethyst_lamp_red",
+      "model": "amethystadds:block/amethyst_lamp_green",
       "x": 180
     },
     "facing=east": {
-      "model": "amethystadds:block/amethyst_lamp_red",
+      "model": "amethystadds:block/amethyst_lamp_green",
       "x": 90,
       "y": 90
     },
     "facing=north": {
-      "model": "amethystadds:block/amethyst_lamp_red",
+      "model": "amethystadds:block/amethyst_lamp_green",
       "x": 90
     },
     "facing=south": {
-      "model": "amethystadds:block/amethyst_lamp_red",
+      "model": "amethystadds:block/amethyst_lamp_green",
       "x": 90,
       "y": 180
     },
     "facing=up": {
-      "model": "amethystadds:block/amethyst_lamp_red"
+      "model": "amethystadds:block/amethyst_lamp_green"
     },
     "facing=west": {
-      "model": "amethystadds:block/amethyst_lamp_red",
+      "model": "amethystadds:block/amethyst_lamp_green",
       "x": 90,
       "y": 270
     }

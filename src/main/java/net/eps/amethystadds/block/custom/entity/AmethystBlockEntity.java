@@ -14,9 +14,12 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import static net.eps.amethystadds.block.ModBlocks.PURPLE_AMETHYST_BLOCK;
+import static net.eps.amethystadds.block.custom.AmethystBlock.LIT;
+import static net.eps.amethystadds.block.custom.AmethystBlock.checkNeighbour;
 import static net.minecraft.block.Blocks.GLOWSTONE;
 
 public class AmethystBlockEntity extends BlockEntity {
+
     public AmethystBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.AMETHYST_BLOCK, pos, state);
     }

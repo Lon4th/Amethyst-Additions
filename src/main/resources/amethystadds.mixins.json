@@ -4,13 +4,25 @@
   "package": "net.eps.amethystadds.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ModEntityDataSaver"
-  ],
-  "client": [
+    "AllayEntityMixin",
+    "AnvilScreenHandlerMixin",
     "BoostrapMixin",
     "CauldronBehaviourMixin",
-    "ExampleMixin",
-    "PlayerTest"
+    "CraftingScreenHandlerMixin",
+    "ExperienceOrbEntityMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
+    "SmithingScreenHandlerMixin",
+    "SmithingTrimRecipeMixin",
+    "TridentEntityAccessor"
+  ],
+  "client": [
+    "ArmorFeatureRendererMixin",
+    "BufferBuilderStorageMixin",
+    "ElytraFeatureRendererMixin",
+    "ItemRendererMixin",
+    "RendererMixin",
+    "TridentEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

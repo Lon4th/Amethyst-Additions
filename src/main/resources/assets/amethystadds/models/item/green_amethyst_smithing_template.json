@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "amethystadds:item/red_amethyst_smithing_template_v2"
+        "layer0": "amethystadds:item/green_amethyst_smithing_template_v2"
     }
 }

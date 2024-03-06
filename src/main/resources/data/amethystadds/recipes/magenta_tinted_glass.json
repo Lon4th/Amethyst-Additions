@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "amethystadds:red_amethyst"
+      "item": "amethystadds:magenta_amethyst"
     },
     "O": {
       "item": "minecraft:glass"
@@ -14,7 +14,7 @@
     " # "
   ],
   "result": {
-    "item": "amethystadds:red_tinted_glass",
-    "count": 1
+    "item": "amethystadds:magenta_tinted_glass",
+    "count": 2
   }
 }

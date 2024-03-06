@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "a": {
-      "item": "amethystadds:light_gray_amethyst"
+      "item": "amethystadds:light_blue_amethyst"
     },
     "A": {
       "tag": "amethystadds:amethyst_clusters"
@@ -17,7 +17,7 @@
     "aaa"
   ],
   "result": {
-    "item": "amethystadds:black_amethyst_block",
+    "item": "amethystadds:light_blue_amethyst_smithing_template",
     "count": 1
   }
 }

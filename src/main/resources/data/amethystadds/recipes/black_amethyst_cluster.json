@@ -6,12 +6,11 @@
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "item": "amethystadds:black_amethyst_block",
+    "item": "amethystadds:black_amethyst_cluster",
     "count": 1
   }
 }

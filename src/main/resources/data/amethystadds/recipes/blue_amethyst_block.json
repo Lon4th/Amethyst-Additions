@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "amethystadds:light_blue_amethyst"
+      "item": "amethystadds:blue_amethyst"
     }
   },
   "pattern": [
@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "item": "amethystadds:light_blue_amethyst_block",
+    "item": "amethystadds:blue_amethyst_block",
     "count": 1
   }
 }

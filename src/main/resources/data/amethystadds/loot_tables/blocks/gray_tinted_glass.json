@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "amethystadds:light_gray_tinted_glass"
+          "name": "amethystadds:gray_tinted_glass"
         }
       ],
       "rolls": 1

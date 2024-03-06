@@ -2,15 +2,17 @@ package net.eps.amethystadds.block.custom;
 
 import net.eps.amethystadds.block.ModBlocks;
 import net.eps.amethystadds.particle.ModParticles;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
+import net.minecraft.block.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.DefaultParticleType;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Util;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public interface ColorBehavior {
 
@@ -90,43 +92,260 @@ public interface ColorBehavior {
         }
     }
 
-    public static Block GetAmethystColor(BlockState state) {
-        if (state.getBlock() == ModBlocks.RED_WATER_CAULDRON) {
-            return ModBlocks.RED_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.YELLOW_WATER_CAULDRON) {
-            return ModBlocks.YELLOW_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.GREEN_WATER_CAULDRON) {
-            return ModBlocks.GREEN_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.LIME_WATER_CAULDRON) {
-            return ModBlocks.LIME_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.ORANGE_WATER_CAULDRON) {
-            return ModBlocks.ORANGE_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.WHITE_WATER_CAULDRON) {
-            return ModBlocks.WHITE_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.BROWN_WATER_CAULDRON) {
-            return ModBlocks.BROWN_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.LIGHT_BLUE_WATER_CAULDRON) {
-            return ModBlocks.LIGHT_BLUE_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.BLUE_WATER_CAULDRON) {
-            return ModBlocks.BLUE_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.CYAN_WATER_CAULDRON) {
-            return ModBlocks.CYAN_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.PINK_WATER_CAULDRON) {
-            return ModBlocks.PINK_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.MAGENTA_WATER_CAULDRON) {
-            return ModBlocks.MAGENTA_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.PURPLE_WATER_CAULDRON) {
-            return ModBlocks.PURPLE_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.LIGHT_GRAY_WATER_CAULDRON) {
-            return ModBlocks.LIGHT_GRAY_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.GRAY_WATER_CAULDRON) {
-            return ModBlocks.GRAY_AMETHYST_BLOCK;
-        } else if (state.getBlock() == ModBlocks.BLACK_WATER_CAULDRON) {
-            return ModBlocks.BLACK_AMETHYST_BLOCK;
+    public static List<Block> GetAmethystBudColor(BlockState state) {
+        List<Block> amethystsList = new ArrayList<>();
+
+        if (state.getBlock() == ModBlocks.RED_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_RED_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_RED_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_RED_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_RED_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.YELLOW_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_YELLOW_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_YELLOW_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_YELLOW_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_YELLOW_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.GREEN_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_GREEN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_GREEN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_GREEN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_GREEN_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.LIME_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_LIME_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_LIME_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_LIME_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_LIME_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.ORANGE_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_ORANGE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_ORANGE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_ORANGE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_ORANGE_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.WHITE_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_WHITE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_WHITE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_WHITE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_WHITE_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.BROWN_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_BROWN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_BROWN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_BROWN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_BROWN_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.LIGHT_BLUE_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_LIGHT_BLUE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_LIGHT_BLUE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_LIGHT_BLUE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_LIGHT_BLUE_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.BLUE_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_BLUE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_BLUE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_BLUE_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_BLUE_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.CYAN_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_CYAN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_CYAN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_CYAN_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_CYAN_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.PINK_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_PINK_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_PINK_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_PINK_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_PINK_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.MAGENTA_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_MAGENTA_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_MAGENTA_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_MAGENTA_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_MAGENTA_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.LIGHT_GRAY_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_LIGHT_GRAY_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_LIGHT_GRAY_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_LIGHT_GRAY_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_LIGHT_GRAY_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.GRAY_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_GRAY_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_GRAY_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_GRAY_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_GRAY_AMETHYST_BUD);
+        } else if (state.getBlock() == ModBlocks.BLACK_BUDDING_AMETHYST) {
+            amethystsList.add(ModBlocks.SMALL_BLACK_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.MEDIUM_BLACK_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.LARGE_BLACK_AMETHYST_BUD);
+            amethystsList.add(ModBlocks.GROWN_BLACK_AMETHYST_BUD);
         } else {
-            return null;
+            amethystsList.add(Blocks.SMALL_AMETHYST_BUD);
+            amethystsList.add(Blocks.MEDIUM_AMETHYST_BUD);
+            amethystsList.add(Blocks.LARGE_AMETHYST_BUD);
+            amethystsList.add(Blocks.AMETHYST_CLUSTER);
         }
+
+        return amethystsList;
     }
+
+
+    public static Block GetAmethystColor(BlockState state, Block block) {
+        if (state.getBlock() == ModBlocks.RED_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.RED_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.RED_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.RED_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.RED_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.YELLOW_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.YELLOW_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.YELLOW_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.YELLOW_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.YELLOW_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.GREEN_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.GREEN_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.GREEN_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.GREEN_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.GREEN_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.LIME_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.LIME_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.LIME_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.LIME_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.LIME_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.ORANGE_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.ORANGE_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.ORANGE_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.ORANGE_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.ORANGE_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.WHITE_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.WHITE_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.WHITE_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.WHITE_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.WHITE_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.BROWN_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.BROWN_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.BROWN_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.BROWN_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.BROWN_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.LIGHT_BLUE_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.LIGHT_BLUE_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.LIGHT_BLUE_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.LIGHT_BLUE_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.LIGHT_BLUE_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.BLUE_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.BLUE_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.BLUE_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.BLUE_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.BLUE_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.CYAN_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.CYAN_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.CYAN_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.CYAN_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.CYAN_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.PINK_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.PINK_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.PINK_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.PINK_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.PINK_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.MAGENTA_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.MAGENTA_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.MAGENTA_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.MAGENTA_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.MAGENTA_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.PURPLE_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.PURPLE_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return Blocks.BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return Blocks.AMETHYST_BLOCK;
+            } else if (block instanceof TintedGlassBlock) {
+                return Blocks.TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.LIGHT_GRAY_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.LIGHT_GRAY_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.LIGHT_GRAY_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.LIGHT_GRAY_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.LIGHT_GRAY_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.GRAY_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.GRAY_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.GRAY_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.GRAY_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.GRAY_TINTED_GLASS;
+            }
+        } else if (state.getBlock() == ModBlocks.BLACK_WATER_CAULDRON) {
+            if (block instanceof AmethystBlock) {
+                return ModBlocks.BLACK_AMETHYST_BLOCK;
+            } else if (block instanceof BuddingAmethystBlock) {
+                return ModBlocks.BLACK_BUDDING_AMETHYST;
+            } else if (block instanceof net.minecraft.block.AmethystBlock) {
+                return ModBlocks.BLACK_AMETHYST_CLUSTER;
+            } else if (block instanceof TintedGlassBlock) {
+                return ModBlocks.BLACK_TINTED_GLASS;
+            }
+        }
+        return block;
+    }
+
 
     public static Integer GetIntColor(BlockState state) {
         if (state.getBlock() == ModBlocks.RED_WATER_CAULDRON) {

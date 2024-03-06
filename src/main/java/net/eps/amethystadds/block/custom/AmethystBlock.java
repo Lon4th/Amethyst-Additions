@@ -5,13 +5,15 @@ import net.eps.amethystadds.AmethystAdditions;
 import net.eps.amethystadds.block.custom.entity.AmethystBlockEntity;
 import net.eps.amethystadds.block.custom.entity.ModBlockEntities;
 import net.eps.amethystadds.particle.ModParticles;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -34,14 +36,14 @@ public class AmethystBlock extends BlockWithEntity implements BlockEntityProvide
 
     public AmethystBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState(this.getDefaultState()
-                .with(LIT, false));
+        this.setDefaultState(this.getDefaultState().with(LIT, false));
     }
 
-    @Override
+    /*@Override
     public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
         return false;
     }
+     */
 
     @Override
     public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
@@ -53,44 +55,51 @@ public class AmethystBlock extends BlockWithEntity implements BlockEntityProvide
 
 
     private static void tick(World world, BlockPos pos, BlockState state, AmethystBlockEntity blockEntity) {
-        if (checkNeighbour(world, pos)) {
+        if (!world.isClient) {
+            if (AmethystBlock.checkNeighbour(world, pos)) {
+
+                world.setBlockState(pos, state.with(LIT, true));
+            } else {
+
+                world.setBlockState(pos, state.with(LIT, false));
+            }
+        }
+
+        if (state.get(LIT) && world.isClient) {
 
             AmethystBlock.spawnLightParticle(state, world, pos, true);
-
-            world.setBlockState(pos, state.with(LIT, true));
-        } else { world.setBlockState(pos, state.with(LIT, false)); }
-
-//        if (state.get(LIT)) {
-//            AmethystBlock.spawnLightParticle(state, world, pos, true);
-//        }
+        }
     }
 
     public static boolean checkNeighbour(World world, BlockPos pos) {
+            boolean EastLight = doesBlockCauseLight(world.getBlockState(pos.east()));
+            boolean WestLight = doesBlockCauseLight(world.getBlockState(pos.west()));
 
-        boolean EastLight = doesBlockCauseLight(world.getBlockState(pos.east()));
-        boolean WestLight = doesBlockCauseLight(world.getBlockState(pos.west()));
+            boolean DownLight = doesBlockCauseLight(world.getBlockState(pos.down()));
+            boolean UpLight = doesBlockCauseLight(world.getBlockState(pos.up()));
 
-        boolean DownLight = doesBlockCauseLight(world.getBlockState(pos.down()));
-        boolean UpLight = doesBlockCauseLight(world.getBlockState(pos.up()));
+            boolean SouthLight = doesBlockCauseLight(world.getBlockState(pos.south()));
+            boolean NorthLight = doesBlockCauseLight(world.getBlockState(pos.north()));
 
-        boolean SouthLight = doesBlockCauseLight(world.getBlockState(pos.south()));
-        boolean NorthLight = doesBlockCauseLight(world.getBlockState(pos.north()));
+            boolean isNoBlockLight = (EastLight || world.getLightLevel(LightType.BLOCK, pos.east()) <= 7) &&
+                    (WestLight || world.getLightLevel(LightType.BLOCK, pos.west()) <= 7) &&
+                    (NorthLight || world.getLightLevel(LightType.BLOCK, pos.north()) <= 7) &&
+                    (SouthLight || world.getLightLevel(LightType.BLOCK, pos.south()) <= 7) &&
+                    (UpLight || world.getLightLevel(LightType.BLOCK, pos.up()) <= 7) &&
+                    (DownLight || world.getLightLevel(LightType.BLOCK, pos.down()) <= 7);
+
+            boolean isNoSkyLight = world.getLightLevel(LightType.SKY, pos.west()) < 1 &&
+                    world.getLightLevel(LightType.SKY, pos.east()) < 1 &&
+                    world.getLightLevel(LightType.SKY, pos.north()) < 1 &&
+                    world.getLightLevel(LightType.SKY, pos.south()) < 1 &&
+                    world.getLightLevel(LightType.SKY, pos.up()) < 1 &&
+                    world.getLightLevel(LightType.SKY, pos.down()) < 1;
+
+            boolean isNight = world.isNight();
+            boolean isNoLight = (isNight || isNoSkyLight) && isNoBlockLight;
 
 
-        boolean isNight = world.getTimeOfDay() > 13000 && world.getTimeOfDay() < 23000;
-
-        boolean isNoLight = world.getLightLevel(LightType.BLOCK, EastLight ? pos : pos.east()) <= 7 &&
-                            world.getLightLevel(LightType.BLOCK, WestLight ? pos : pos.west()) <= 7 &&
-                            world.getLightLevel(LightType.BLOCK, DownLight ? pos : pos.down()) <= 7 &&
-                            world.getLightLevel(LightType.BLOCK, UpLight ? pos : pos.up()) <= 7 &&
-                            world.getLightLevel(LightType.BLOCK, SouthLight ? pos : pos.south()) <= 7 &&
-                            world.getLightLevel(LightType.BLOCK, NorthLight ? pos : pos.north()) <= 7;
-
-        boolean isNoSkyLight = world.getLightLevel(LightType.SKY, pos.west().south().east().north().up().down()) < 1;
-
-        if (isNight && isNoLight || !isNight && isNoSkyLight && isNoLight) {
-            return checkStateNeighbour(world, pos);
-        } else { return false; }
+            return isNoLight && checkStateNeighbour(world, pos);
     }
 
     public static boolean checkStateNeighbour(World world, BlockPos pos) {
@@ -148,15 +157,10 @@ public class AmethystBlock extends BlockWithEntity implements BlockEntityProvide
         }
     }
 
-
-    /* APPEND */
-
-
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(LIT);
     }
-
 
     /* BLOCK ENTITY */
 
@@ -175,7 +179,7 @@ public class AmethystBlock extends BlockWithEntity implements BlockEntityProvide
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.AMETHYST_BLOCK, AmethystBlock::tick);
+        return validateTicker(type, ModBlockEntities.AMETHYST_BLOCK, AmethystBlock::tick);
     }
 
 }

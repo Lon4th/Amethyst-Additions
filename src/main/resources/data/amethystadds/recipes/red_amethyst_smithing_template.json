@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "a": {
-      "item": "minecraft:amethyst_shard"
+      "item": "amethystadds:red_amethyst"
     },
     "A": {
-      "item": "minecraft:amethyst_block"
+      "tag": "amethystadds:amethyst_clusters"
     },
     "d": {
       "item": "minecraft:diamond"
@@ -17,7 +17,7 @@
     "aaa"
   ],
   "result": {
-    "item": "amethystadds:black_amethyst_block",
+    "item": "amethystadds:red_amethyst_smithing_template",
     "count": 1
   }
 }

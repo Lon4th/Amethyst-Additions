@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "amethystadds:block/tinted_glass_red"
+        "all": "amethystadds:block/tinted_glass_lime"
     }
 }

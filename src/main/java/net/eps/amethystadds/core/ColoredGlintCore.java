@@ -1,6 +1,7 @@
 package net.eps.amethystadds.core;
 
 import net.eps.amethystadds.AmethystAdditions;
+import net.eps.amethystadds.client.ColoredGlintRenderLayer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.RenderLayer;
@@ -12,11 +13,11 @@ import net.minecraft.util.DyeColor;
  * @author WireSegal
  * Hacked by svenhjol
  * Ported to Fabric 1.18 by Pepperoni-Jabroni
- * Created at 1:52 PM on 8/17/19.
  */
-// This class lovingly yoinked (& updated to 1.18) from
-// https://github.com/VazkiiMods/Quark/blob/master/src/main/java/vazkii/quark/content/tools/module/ColorRunesModule.java
-// Published under the "CC BY-NC-SA 3.0" Creative Commons License
+// This class was taken from
+// Mod "Quark" (https://github.com/VazkiiMods/Quark/blob/master/src/main/java/vazkii/quark/content/tools/module/ColorRunesModule.java)
+// And
+// Mod "Enchant the Rainbow" (https://github.com/Pepperoni-Jabroni/EnchantTheRainbow/blob/main/src/main/java/pepjebs/enchant_the_rainbow/core/EnchantTheRainbowCore.java)
 public class ColoredGlintCore {
 
     private static final ThreadLocal<ItemStack> targetStack = new ThreadLocal<>();

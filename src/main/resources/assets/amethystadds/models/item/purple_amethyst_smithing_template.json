@@ -1,6 +1,6 @@
 {
-    "parent": "minecraft:item/generated",
+    "parent": "item/generated",
     "textures": {
-        "layer0": "amethystadds:block/amethyst_lamp_purple"
+        "layer0": "amethystadds:item/purple_amethyst_smithing_template_v2"
     }
 }

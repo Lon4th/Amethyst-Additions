@@ -1,0 +1,37 @@
+{
+  "replace": false,
+  "values": [
+      "amethystadds:purple_amethyst_block",
+      "amethystadds:red_amethyst_block",
+      "amethystadds:orange_amethyst_block",
+      "amethystadds:yellow_amethyst_block",
+      "amethystadds:brown_amethyst_block",
+      "amethystadds:green_amethyst_block",
+      "amethystadds:lime_amethyst_block",
+      "amethystadds:light_gray_amethyst_block",
+      "amethystadds:light_blue_amethyst_block",
+      "amethystadds:blue_amethyst_block",
+      "amethystadds:gray_amethyst_block",
+      "amethystadds:cyan_amethyst_block",
+      "amethystadds:magenta_amethyst_block",
+      "amethystadds:pink_amethyst_block",
+      "amethystadds:white_amethyst_block",
+      "amethystadds:black_amethyst_block",
+
+      "amethystadds:white_amethyst_cluster",
+      "amethystadds:orange_amethyst_cluster",
+      "amethystadds:magenta_amethyst_cluster",
+      "amethystadds:light_blue_amethyst_cluster",
+      "amethystadds:yellow_amethyst_cluster",
+      "amethystadds:lime_amethyst_cluster",
+      "amethystadds:pink_amethyst_cluster",
+      "amethystadds:gray_amethyst_cluster",
+      "amethystadds:light_gray_amethyst_cluster",
+      "amethystadds:cyan_amethyst_cluster",
+      "amethystadds:blue_amethyst_cluster",
+      "amethystadds:brown_amethyst_cluster",
+      "amethystadds:green_amethyst_cluster",
+      "amethystadds:red_amethyst_cluster",
+      "amethystadds:black_amethyst_cluster"
+  ]
+}

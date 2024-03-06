@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "amethystadds:block/small_light_blue_amethyst_bud"
+    }
+}

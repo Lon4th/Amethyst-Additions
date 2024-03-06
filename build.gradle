@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.0-SNAPSHOT'
+	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,6 +11,12 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	maven {url = "https://minecraft.guntram.de/maven/"}
+	maven { url = "https://jitpack.io" }
+	maven { url = "https://maven.shedaniel.me/" }
+	maven { url "https://maven.terraformersmc.com/releases/"}
+	maven {url = "https://api.modrinth.com/maven"}
+
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -26,6 +32,17 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
+
+	modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
+
+	modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}"
+
+	modImplementation "com.github.Chocohead:Fabric-ASM:v${project.fabricasm_version}"
+
 }
 
 processResources {
@@ -46,6 +63,10 @@ java {
 	// if it is present.
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/amethystadds.accesswidener")
 }
 
 jar {

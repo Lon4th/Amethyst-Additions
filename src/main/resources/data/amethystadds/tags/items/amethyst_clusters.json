@@ -1,0 +1,20 @@
+{
+  "values": [
+    "minecraft:amethyst_block",
+    "amethystadds:green_amethyst_cluster",
+    "amethystadds:lime_amethyst_cluster",
+    "amethystadds:black_amethyst_cluster",
+    "amethystadds:blue_amethyst_cluster",
+    "amethystadds:brown_amethyst_cluster",
+    "amethystadds:cyan_amethyst_cluster",
+    "amethystadds:gray_amethyst_cluster",
+    "amethystadds:light_blue_amethyst_cluster",
+    "amethystadds:light_gray_amethyst_cluster",
+    "amethystadds:magenta_amethyst_cluster",
+    "amethystadds:orange_amethyst_cluster",
+    "amethystadds:pink_amethyst_cluster",
+    "amethystadds:red_amethyst_cluster",
+    "amethystadds:white_amethyst_cluster",
+    "amethystadds:yellow_amethyst_cluster"
+  ]
+}

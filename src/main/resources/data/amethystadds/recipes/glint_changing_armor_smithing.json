@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing_trim",
+  "addition": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "base": {
+    "tag": "minecraft:trimmable_armor"
+  },
+  "template": {
+    "tag": "amethystadds:amethyst_trim_templates"
+  }
+}

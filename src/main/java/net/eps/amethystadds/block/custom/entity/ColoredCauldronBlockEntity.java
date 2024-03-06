@@ -7,6 +7,8 @@ import net.eps.amethystadds.block.custom.ColorBehavior;
 import net.eps.amethystadds.block.custom.ColoredWaterCauldron;
 import net.eps.amethystadds.particle.ModParticles;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BuddingAmethystBlock;
+import net.minecraft.block.TintedGlassBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.nbt.NbtCompound;
@@ -23,7 +25,7 @@ public class ColoredCauldronBlockEntity extends BlockEntity implements ColorBeha
     private int progress = 0;
     private int maxProgress = 2000;
     private int transformProgress = 0;
-    private int maxTransformProgress = 2000;
+    private int maxTransformProgress = 1000;
 
     public ColoredCauldronBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COLORED_CAULDRON_BLOCK, pos, state);
@@ -104,17 +106,23 @@ public class ColoredCauldronBlockEntity extends BlockEntity implements ColorBeha
         if (!state.get(BOILED)) { return; }
 
         boolean amethystblock = world.getBlockState(pos.up()).getBlock() instanceof AmethystBlock;
+        boolean amethystcluster = world.getBlockState(pos.up()).getBlock() instanceof net.minecraft.block.AmethystBlock;
+        boolean buddingamethyst = world.getBlockState(pos.up()).getBlock() instanceof BuddingAmethystBlock;
+        boolean tintedglass = world.getBlockState(pos.up()).getBlock() instanceof TintedGlassBlock;
 
-        if (amethystblock && !(world.getBlockState(pos.up()).getBlock() == ColorBehavior.GetAmethystColor(state))) {
-            entity.transformProgress++;
-            ColoredWaterCauldron.spawnParticlesWhileTransforming(world, pos.up(), ColorBehavior.GetBubbleColor(state));
-            if (entity.transformProgress >= entity.maxTransformProgress) {
-                world.setBlockState(pos.up(), ColorBehavior.GetAmethystColor(state).getDefaultState());
-                ColoredWaterCauldron.decrementFluidLevel(state, world, pos);
-                ColoredWaterCauldron.spawnTransformParticles(world, pos.up(), ColorBehavior.GetBloomColor(state));
+
+        if (buddingamethyst || amethystcluster || amethystblock || tintedglass) {
+            if (!(world.getBlockState(pos.up()).getBlock() == ColorBehavior.GetAmethystColor(state, world.getBlockState(pos.up()).getBlock()))) {
+                entity.transformProgress++;
+                ColoredWaterCauldron.spawnParticlesWhileTransforming(world, pos.up(), ColorBehavior.GetBubbleColor(state));
+                if (entity.transformProgress >= entity.maxTransformProgress) {
+                    world.setBlockState(pos.up(), ColorBehavior.GetAmethystColor(state, world.getBlockState(pos.up()).getBlock()).getDefaultState());
+                    ColoredWaterCauldron.decrementFluidLevel(state, world, pos);
+                    ColoredWaterCauldron.spawnTransformParticles(world, pos.up(), ColorBehavior.GetBloomColor(state));
+                }
+            } else {
+                entity.resetTransformProgress();
             }
-        } else {
-            entity.resetTransformProgress();
         }
     }
 }

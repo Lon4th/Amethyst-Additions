@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "tag": "amethystadds:shields"
+    },
+    "A": {
+      "tag": "amethystadds:amethysts"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "result": {
+    "item": "amethystadds:amethyst_shield"
+  }
+}

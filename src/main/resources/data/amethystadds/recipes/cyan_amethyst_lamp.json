@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "amethystadds:cyan_amethyst_shard"
+      "item": "amethystadds:cyan_amethyst"
     }
   },
   "pattern": [

@@ -1,0 +1,140 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_purple_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_purple"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_base_nopattern"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/shield_base_nopattern"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_red_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_red"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_orange_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_orange"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_yellow_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_yellow"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_brown_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_brown"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_green_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_green"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_lime_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_lime"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_magenta_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_magenta"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_pink_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_pink"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_cyan_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_cyan"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_white_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_white"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_black_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_black"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_light_blue_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_light_blue"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_blue_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_blue"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_light_gray_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_light_gray"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_gray_v5"
+    },
+    {
+      "type": "single",
+      "resource": "amethystadds:entity/amethyst_shield_shard_base_gray"
+    }
+  ]
+}

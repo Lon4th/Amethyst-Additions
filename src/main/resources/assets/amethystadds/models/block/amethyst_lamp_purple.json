@@ -1,6 +1,8 @@
 {
-    "parent": "block/cube_all",
+    "parent": "block/cross",
     "textures": {
-        "all": "amethystadds:block/amethyst_cluster_black"
+        "cross": "amethystadds:block/amethyst_lamp_purple",
+        "particle": "block/amethyst_block"
+
     }
 }

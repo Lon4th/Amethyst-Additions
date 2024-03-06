@@ -53,7 +53,7 @@ public interface CauldronBehaviourMixin {
 
             player.incrementStat(Stats.USE_CAULDRON);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
-            ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL,
+            ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, ModBlocks.RED_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL,
                     state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BONE_MEAL_USE, true);
             for (int i = 0; i <= world.getRandom().nextBetween(3, 12); i++) {
                 world.addImportantParticle(ModParticles.RED_DUST, true, position.x, position.y + 0.1, position.z,
@@ -75,7 +75,7 @@ public interface CauldronBehaviourMixin {
 
             player.incrementStat(Stats.USE_CAULDRON);
             player.incrementStat(Stats.USED.getOrCreateStat(item));
-            ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, (BlockState)ModBlocks.YELLOW_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL,
+            ColoredCauldronBehavior.ChangeCauldron(world, pos, player, hand, stack, ModBlocks.YELLOW_WATER_CAULDRON.getDefaultState().with(ColoredWaterCauldron.LEVEL,
                     state.get(LeveledCauldronBlock.LEVEL)), SoundEvents.ITEM_BONE_MEAL_USE, true);
             for (int i = 0; i <= world.getRandom().nextBetween(3, 12); i++) {
             world.addImportantParticle(ModParticles.YELLOW_DUST, true, position.x, position.y + 0.1, position.z,

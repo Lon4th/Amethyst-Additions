@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "amethystadds:red_amethyst"
+      "item": "amethystadds:orange_amethyst"
     }
   },
   "pattern": [
@@ -10,7 +10,7 @@
     "##"
   ],
   "result": {
-    "item": "amethystadds:red_amethyst_cluster",
+    "item": "amethystadds:orange_amethyst_cluster",
     "count": 1
   }
 }

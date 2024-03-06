@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "amethystadds:light_gray_amethyst"
+      "item": "amethystadds:light_blue_amethyst"
     },
     "O": {
       "item": "minecraft:glass"
@@ -14,7 +14,7 @@
     " # "
   ],
   "result": {
-    "item": "amethystadds:light_gray_tinted_glass",
-    "count": 1
+    "item": "amethystadds:light_blue_tinted_glass",
+    "count": 2
   }
 }

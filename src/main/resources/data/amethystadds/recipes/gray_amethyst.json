@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "amethystadds:light_gray_amethyst_block"
+      "item": "amethystadds:gray_amethyst_block"
     }
   ],
   "result": {
-    "item": "amethystadds:light_gray_amethyst",
+    "item": "amethystadds:gray_amethyst",
     "count": 9
   }
 }

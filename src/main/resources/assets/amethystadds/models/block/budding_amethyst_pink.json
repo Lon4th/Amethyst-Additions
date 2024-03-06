@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "amethystadds:block/budding_amethyst_pink"
+    }
+}

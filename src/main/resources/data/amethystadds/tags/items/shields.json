@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "amethystadds:amethyst_shield",
+    "minecraft:shield"
+  ]
+}

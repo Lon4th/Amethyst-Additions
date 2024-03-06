@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-// This class lovingly yoinked (& updated to 1.18) from
-// https://github.com/VazkiiMods/Quark/blob/master/src/main/java/vazkii/quark/content/tools/client/GlintRenderType.java
-// Published under the "CC BY-NC-SA 3.0" Creative Commons License
+// This class was taken from
+// Mod "Quark" (https://github.com/VazkiiMods/Quark/blob/master/src/main/java/vazkii/quark/content/tools/client/render/GlintRenderTypes.java)
+// And
+// Mod "Enchant the Rainbow" (https://github.com/Pepperoni-Jabroni/EnchantTheRainbow/blob/main/src/main/java/pepjebs/enchant_the_rainbow/client/GlintRenderLayer.java)
 @Environment(EnvType.CLIENT)
 public class ColoredGlintRenderLayer extends RenderLayer {
 
@@ -83,7 +84,7 @@ public class ColoredGlintRenderLayer extends RenderLayer {
                 .cull(DISABLE_CULLING)
                 .depthTest(EQUAL_DEPTH_TEST)
                 .transparency(GLINT_TRANSPARENCY)
-                .target(ITEM_TARGET)
+                .target(ITEM_ENTITY_TARGET)
                 .texturing(ENTITY_GLINT_TEXTURING)
                 .build(false));
     }
@@ -163,7 +164,7 @@ public class ColoredGlintRenderLayer extends RenderLayer {
                 .depthTest(EQUAL_DEPTH_TEST)
                 .transparency(GLINT_TRANSPARENCY)
                 .texturing(GLINT_TEXTURING)
-                .target(ITEM_TARGET)
+                .target(ITEM_ENTITY_TARGET)
                 .build(false));
     }
 }

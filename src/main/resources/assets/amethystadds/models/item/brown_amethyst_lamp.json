@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "amethystadds:block/amethyst_lamp_red"
+        "layer0": "amethystadds:block/amethyst_lamp_brown"
     }
 }
