@@ -70,7 +70,7 @@ public class ColoredAllayModel extends SinglePartEntityModel<ColoredAllayEntity>
             t = allayEntity.method_44368(m);
             float u = MathHelper.cos(r) * 14.0F * 0.017453292F;
             float v = MathHelper.cos(r) * 30.0F * 0.017453292F;
-            this.root.yaw = allayEntity.isSpinning() ? 12.566371F * t : this.root.yaw;
+            this.root.yaw = allayEntity.isDancing() ? 12.566371F * t : this.root.yaw;
             this.root.roll = s * (1.0F - t);
             this.head.yaw = v * (1.0F - t);
             this.head.roll = u * (1.0F - t);

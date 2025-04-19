@@ -179,7 +179,7 @@ public class AmethystBlock extends BlockWithEntity implements BlockEntityProvide
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, ModBlockEntities.AMETHYST_BLOCK, AmethystBlock::tick);
+        return checkType(type, ModBlockEntities.AMETHYST_BLOCK, AmethystBlock::tick);
     }
 
 }
